@@ -11,6 +11,8 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+var database = firebase.database();
+
 let userScore = 0;
 let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
