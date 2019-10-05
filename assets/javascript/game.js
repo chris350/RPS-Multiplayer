@@ -1,3 +1,16 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyDTaH3lY-dYhNrcJSx7QoGC9rTXEkFQaG4",
+  authDomain: "rps-multiplayer-9e3ed.firebaseapp.com",
+  databaseURL: "https://rps-multiplayer-9e3ed.firebaseio.com",
+  projectId: "rps-multiplayer-9e3ed",
+  storageBucket: "",
+  messagingSenderId: "678404270877",
+  appId: "1:678404270877:web:f8f46d6fc9618bd6ea4ff4",
+  measurementId: "G-307FP08Y52"
+};
+
+firebase.initializeApp(firebaseConfig);
+
 let userScore = 0;
 let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
