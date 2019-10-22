@@ -13,6 +13,8 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
+var userChoice;
+var computerChoice;
 let userScore = 0;
 let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
@@ -76,21 +78,34 @@ function draw(userChoice, computerChoice) {
 }
 
 function game(userChoice) {
+
   const computerChoice = getComputerChoice();
   switch(userChoice + computerChoice) {
       case "rs":
       case "pr":
       case "sp":
+        database.ref().set({
+          userChoice: userChoice,
+          computerChoice: computerChoice
+        });
           win(userChoice, computerChoice);
           break;
           case "rp":
           case "ps":
           case "sr":
+              database.ref().set({
+                userChoice: userChoice,
+                computerChoice: computerChoice
+              });
             lose(userChoice, computerChoice);
           break;
           case "rr":
           case "pp":
           case "ss":
+              database.ref().set({
+                userChoice: userChoice,
+                computerChoice: computerChoice
+              });
             draw(userChoice, computerChoice);
           break;
           
